@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react'; 
 import { logoutUser } from '../../features/auth/userSlice';
 import { auth } from '../../config/firebase';
 import { useQuery } from '@tanstack/react-query';
@@ -20,7 +20,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
  
- const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [searchParams] = useSearchParams();
   const urlSearch = searchParams.get('search') || "";
@@ -29,18 +29,14 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState(urlSearch);
   const [category, setCategory] = useState(urlCategory);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
- useEffect(() => {
+
+  useEffect(() => {
     function syn(){
        setSearchTerm(urlSearch);
-   setCategory(urlCategory);
+       setCategory(urlCategory);
      }
      syn();
   }, [urlSearch, urlCategory]);      
-
-
-
-
-
 
   const { data: categories = ["All"] } = useQuery({
     queryKey: ['categories'],
@@ -51,12 +47,10 @@ const Navbar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(`/products?search=${searchTerm}&category=${category}`);
-    setIsMobileMenuOpen(false);
+    setIsMobileMenuOpen(false); // Only close menu when SEARCH is clicked
   };
 
-  // NEW: Handle the click on the "Filter" icon button
   const handleFilterClick = () => {
-    // Logic: Navigate to products page with "All" categories selected (Reset filters)
     setCategory("All");
     setSearchTerm("");
     navigate('/products?category=All');
@@ -68,19 +62,14 @@ const Navbar = () => {
     toast.success("Logged out successfully");
     navigate('/login');
   };
-const toggleTheme = () => {
 
+  const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
-
     document.documentElement.classList.toggle('dark');
-
   };
+
   return (
-    // UPDATED BG COLOR:
-    // Light Mode: 'bg-slate-100/90' gives that slight grey premium feel you wanted.
-    // Dark Mode: 'bg-slate-950/80' keeps the dark glass look.
-    <nav className="sticky top-0 z-50  bg-neutral-300/70  dark:bg-slate-950/80 backdrop-blur-md border-b
-     border-slate-100 dark:border-slate-800 transition-colors duration-300">
+    <nav className="sticky top-0 z-50 bg-neutral-300/70 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 transition-colors duration-300">
       
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20 gap-4">
@@ -94,7 +83,7 @@ const toggleTheme = () => {
             setCategory={setCategory}
             categories={categories}
             handleSearch={handleSearch}
-            handleFilterClick={handleFilterClick} // Pass the new handler
+            handleFilterClick={handleFilterClick} 
           />
 
           <div className="flex items-center gap-2 md:gap-4">
@@ -117,9 +106,28 @@ const toggleTheme = () => {
           </div>
         </div>
 
+        {/* MOBILE MENU */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-slate-200 dark:border-slate-800 animate-slide-down">
              <form onSubmit={handleSearch} className="flex flex-col gap-3">
+               
+               {/* 1. Category Dropdown (Standard Select) */}
+               <div className="relative">
+                 <select
+                   value={category}
+                   onChange={(e) => setCategory(e.target.value)} // Just update state, don't close menu yet
+                   className="w-full px-4 py-3 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl outline-none text-slate-700 dark:text-white appearance-none focus:ring-2 focus:ring-blue-500 font-medium"
+                 >
+                   {categories.map(c => <option key={c} value={c}>{c}</option>)}
+                 </select>
+                 
+                 {/* Arrow Icon for visual cue */}
+                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500 dark:text-slate-400">
+                   <ChevronDown size={16} />
+                 </div>
+               </div>
+
+               {/* 2. Search Input */}
                <input 
                  type="text" 
                  placeholder="Search products..." 
@@ -127,7 +135,11 @@ const toggleTheme = () => {
                  value={searchTerm}
                  onChange={(e) => setSearchTerm(e.target.value)}
                />
-               <button type="submit" className="bg-blue-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-blue-500/30">Search</button>
+               
+               {/* 3. Search Button (Triggers Navigation & Closes Menu) */}
+               <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold shadow-lg shadow-blue-500/30 transition-colors">
+                 Search Results
+               </button>
              </form>
           </div>
         )}

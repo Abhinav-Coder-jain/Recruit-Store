@@ -25,6 +25,13 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
+
+    if (!user) {
+      toast.error("Please login to add items to cart");
+      navigate("/login");
+      return;
+    }
+
     const validImage = product.main_image_url || product.image || "";
 
     dispatch(addToCart({
@@ -89,6 +96,13 @@ const ProductCard = ({ product }) => {
              <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{product.rating}</span>
            </div>
         </div>
+
+        {/* SKU DISPLAY - RESTORED HERE */}
+        {product.sku && (
+          <p className="text-[10px] text-slate-400 dark:text-slate-500 font-mono mb-1">
+            SKU: {product.sku}
+          </p>
+        )}
 
         <h3 className="font-bold text-slate-800 dark:text-white text-sm mb-2 line-clamp-2 leading-relaxed min-h-[40px]">
           {product.title}

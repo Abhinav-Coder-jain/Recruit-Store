@@ -157,6 +157,11 @@ const ProductDetailsPage = () => {
                   </span>
                 </div>
                 <span className="text-sm text-slate-400">({product.stock} in stock)</span>
+                {product.sku && (
+             <span className="text-sm text-slate-400">
+            SKU: {product.sku}
+          </span>
+        )}
               </div>
             </div>
 
