@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media print {
+  /* 1. Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* 2. Make only the invoice visible */
+  .print-only, .print-only * {
+    visibility: visible;
+  }
+
+  /* 3. Position the invoice at the top-left of the paper */
+  .print-only {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px; /* Optional padding for paper */
+    background: white;
+    box-shadow: none !important; /* Remove shadows for cleaner print */
+  }
+
+  /* Hide scrollbars and close buttons */
+  .no-print {
+    display: none !important;
+  }
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300; /* Smooth transition */
+  }
+  
+  /* When the 'dark' class is present on HTML tag, apply these styles to body */
+  .dark body {
+    @apply bg-gray-900 text-white;
+  }
+}
