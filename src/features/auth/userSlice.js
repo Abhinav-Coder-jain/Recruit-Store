@@ -43,11 +43,17 @@ const userSlice = createSlice({
         state.user.walletBalance = action.payload;
       }
     },
+
     // Action: Toggle Subscription
     setSubscriptionStatus: (state, action) => {
       if (state.user) {
         console.log(`User Slice: Subscription status changed to ${action.payload}`);
         state.user.isSubscribed = action.payload;
+      }
+    },// This allows us to update multiple fields (Card, Wallet, VIP) in one go
+    syncUserProfile: (state, action) => {
+      if (state.user) {
+        state.user = { ...state.user, ...action.payload };
       }
     }
   },
@@ -59,7 +65,8 @@ export const {
   authFailure, 
   logoutUser, 
   updateWallet, 
-  setSubscriptionStatus 
+  setSubscriptionStatus,
+  syncUserProfile
 } = userSlice.actions;
 
 export default userSlice.reducer;

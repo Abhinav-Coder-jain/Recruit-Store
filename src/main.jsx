@@ -5,7 +5,7 @@ import './index.css'
 
 // Redux Imports
 import { Provider } from 'react-redux'
-import { store } from './features/store.js'
+import { store } from './common/store.js'
 
 import AuthProvider from './features/auth/AuthProvider.jsx'
 

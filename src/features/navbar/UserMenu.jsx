@@ -38,12 +38,12 @@ const UserMenu = ({ user, handleLogout }) => {
       {/* TRIGGER BUTTON (Click instead of Hover) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-3 p-1 rounded-full transition-all py-1.5 pr-3 border ${isOpen ? 'bg-slate-800 border-slate-700' : 'border-transparent hover:bg-slate-800 hover:border-slate-700'}`}
+        className={`flex items-center gap-3 p-1 rounded-full transition-all py-1.5 pr-3 border ${isOpen ? 'bg-slate-400 border-slate-700' : 'border-transparent hover:bg-slate-100 hover:border-slate-400'}`}
       >
         <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-500 text-white flex items-center justify-center font-bold text-sm shadow-md">
           {user.displayName ? user.displayName[0].toUpperCase() : 'U'}
         </div>
-        <span className="text-sm font-semibold text-slate-600 hidden lg:block max-w-[100px] truncate">
+        <span className="text-sm font-semibold text-slate-800  dark:text-slate-400 hidden lg:block max-w-[100px] truncate">
           {user.displayName ? user.displayName[0].toUpperCase() + user.displayName.slice(1) : 'User'}
         </span>
         {/* Tiny arrow to indicate dropdown */}

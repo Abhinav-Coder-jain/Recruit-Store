@@ -47,7 +47,8 @@ const HeroCarousel = () => {
   const prevSlide = () => setCurrent((current - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative mx-auto mt-6 mb-12 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 dark:shadow-none h-[380px] md:h-[450px] group border border-slate-200 dark:border-slate-800">
+    <div className="relative mx-auto mt-6 mb-12 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 dark:shadow-none
+     h-[380px] md:h-[450px] group border border-slate-200 dark:border-slate-800">
       
       {/* SLIDES */}
       {slides.map((slide, index) => (
@@ -67,7 +68,8 @@ const HeroCarousel = () => {
             
             <Link 
               to={slide.link} 
-              className="group bg-white text-slate-900 font-bold py-3.5 px-8 rounded-full hover:scale-105 hover:shadow-xl transition-all animate-bounce-in delay-200 flex items-center gap-2"
+              className="group bg-white text-slate-900 font-bold py-3.5 px-8 rounded-full
+               hover:scale-105 hover:shadow-xl transition-all animate-bounce-in delay-200 flex items-center gap-2"
             >
               {slide.btnText} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform text-current" />
             </Link>
