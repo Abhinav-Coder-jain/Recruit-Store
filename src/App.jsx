@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "category/:categoryName",
-        element: <ProductListingPage />, // Reusing Listing page for filtered views
+        element: <ProductListingPage />, 
       },
       {
         path: "login",

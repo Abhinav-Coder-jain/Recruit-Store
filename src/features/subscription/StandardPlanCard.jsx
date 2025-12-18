@@ -13,7 +13,7 @@ const StandardPlanCard = () => {
       </div>
 
       <ul className="space-y-5 mb-8">
-        <li className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+        <li className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
           <div className="p-1 rounded-full bg-slate-100 dark:bg-slate-800">
              <Check className="text-slate-600 dark:text-slate-400" size={16} />
           </div>

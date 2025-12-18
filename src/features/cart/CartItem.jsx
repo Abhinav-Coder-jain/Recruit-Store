@@ -24,6 +24,8 @@ const CartItem = ({ item }) => {
     toast.success(`${item.title} removed`);
   };
 
+const btnStyle = "p-2 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors w-9 h-9 flex items-center justify-center";
+
   return (
     <div className="flex flex-col sm:flex-row sm:items-center gap-4 py-6 border-b border-slate-100 dark:border-slate-800 last:border-0 group transition-colors duration-300">
       {/* Image */}
@@ -52,7 +54,7 @@ const CartItem = ({ item }) => {
         <div className="flex items-center bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden">
           <button 
             onClick={handleDecrease}
-            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors w-9 h-9 flex items-center justify-center"
+            className={btnStyle}
           >
             <Minus size={14} />
           </button>
@@ -61,7 +63,7 @@ const CartItem = ({ item }) => {
           </span>
           <button 
             onClick={handleIncrease}
-            className="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors w-9 h-9 flex items-center justify-center"
+            className={btnStyle}
           >
             <Plus size={14} />
           </button>
