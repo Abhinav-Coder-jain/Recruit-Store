@@ -101,6 +101,7 @@ const ProductCard = ({ product }) => {
             cartItem={cartItem}
             onAdd={handleAddToCart}
             onDecrease={handleDecrease}
+            user={user}
           />
           
         </div>

@@ -61,8 +61,7 @@ export const useProductReviews = (productId, user) => {
   return { 
     reviews, 
     isLoadingReviews: isLoading, 
-    submitReview: mutation.mutateAsync, // Expose mutate as submit function
-    isSubmitting: mutation.isPending,
+    submitReview: mutation.mutateAsync, 
     userHasReviewed
   };
 };

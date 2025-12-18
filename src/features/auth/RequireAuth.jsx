@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
@@ -16,7 +16,7 @@ const RequireAuth = ({ children }) => {
   }
 
   if (!user) {
-    // Redirect to login, but pass the current location AND a message
+ 
     return <Navigate 
       to="/login" 
       state={{ from: location, message: "You must be logged in to access that page." }} 

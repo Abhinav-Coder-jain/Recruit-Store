@@ -1,8 +1,8 @@
 import React from "react";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 
-const ProductActions = ({ cartItem, onAdd, onDecrease }) => {
-  if (cartItem) {
+const ProductActions = ({ cartItem, onAdd, onDecrease, user }) => {
+  if (user && cartItem) {
     return (
       <div
         className="flex items-center bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-100 dark:border-blue-500/30 overflow-hidden"

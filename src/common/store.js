@@ -11,4 +11,4 @@ export const store = configureStore({
   },
 });
 
-console.log('Redux Store: Initialized successfully.');   
+console.log('Redux Store: Initialized successfully.');      

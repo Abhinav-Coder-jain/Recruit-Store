@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  user: null, // { uid, email, displayName, walletBalance, isSubscribed, orders }
+  user: null,
   loading: false,
   error: null,
 };
@@ -50,7 +50,7 @@ const userSlice = createSlice({
         console.log(`User Slice: Subscription status changed to ${action.payload}`);
         state.user.isSubscribed = action.payload;
       }
-    },// This allows us to update multiple fields (Card, Wallet, VIP) in one go
+    },
     syncUserProfile: (state, action) => {
       if (state.user) {
         state.user = { ...state.user, ...action.payload };

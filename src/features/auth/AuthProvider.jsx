@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../../config/firebase';
-import { authSuccess, logoutUser } from './userSlice'; // CRITICAL FIX: Removed 'loginUser'
+import { authSuccess, logoutUser } from './userSlice';
 import { setCart } from '../cart/cartSlice';
 import { Loader2 } from 'lucide-react';
 
@@ -32,9 +32,9 @@ const AuthProvider = ({ children }) => {
               isSubscribed: userData.isSubscribed || false
             }));
 
-            // 2. Restore Cart (CRITICAL FIX: Safety Checks)
+           
             if (userData.cart) {
-              // Handle both structure formats safely
+              
               const cartItems = userData.cart.items || userData.cart;
               if (Array.isArray(cartItems)) {
                 console.log("AuthProvider: Restoring cart with", cartItems.length, "items");

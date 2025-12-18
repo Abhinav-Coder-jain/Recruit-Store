@@ -21,7 +21,7 @@ const CheckoutPage = () => {
   const [loading, setLoading] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('wallet'); 
 
-  // Shipping State
+  
   const [formData, setFormData] = useState({
     fullName: user?.displayName || "",
     address: "",

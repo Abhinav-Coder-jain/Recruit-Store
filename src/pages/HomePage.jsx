@@ -34,8 +34,7 @@ const HomePage = () => {
     <div className="min-h-screen transition-colors duration-300">
       
       {/* SECTION 1: HERO BANNER AREA 
-          Light Mode: bg-white (Clean look)
-          Dark Mode: bg-slate-950 (Seamless dark)
+         
       */}
       <div className="bg-slate-50 dark:bg-slate-950 pt-6 pb-2 transition-colors duration-300">
         <div className="container mx-auto px-4">
@@ -44,8 +43,7 @@ const HomePage = () => {
       </div>
 
       {/* SECTION 2: PRODUCT ROWS AREA
-          Light Mode: bg-slate-50 (Premium Grey contrast for cards)
-          Dark Mode: bg-slate-950 (Stays dark)
+          
       */}
       <div className="bg-gray-200 dark:bg-slate-950 py-12 border-t border-slate-100 dark:border-slate-800/50 transition-colors duration-300">
         <div className="container mx-auto px-4 space-y-4">

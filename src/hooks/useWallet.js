@@ -29,19 +29,19 @@ export const useWallet = (user) => {
   const queryClient = useQueryClient();
   const [amount, setAmount] = useState("");
   
-  // NEW: Track if we are still doing the initial sync
+  
   const [initializing, setInitializing] = useState(true);
 
-  // 1. SYNC: Fetch latest Wallet Data
+  
   const { data: walletData, isLoading: isQueryLoading } = useQuery({
     queryKey: ['wallet', user?.uid],
     queryFn: () => fetchUserWalletFn(user.uid),
     enabled: !!user?.uid,
-    onSuccess: () => setInitializing(false), // Stop loading when done
-    onError: () => setInitializing(false),   // Stop loading on error too
+    onSuccess: () => setInitializing(false), 
+    onError: () => setInitializing(false),   
   });
 
-  // 2. EFFECT: Sync React Query Data to Redux
+  // EFFECT: Sync React Query Data to Redux
   useEffect(() => {
     function sync(){
  setInitializing(false);
@@ -95,7 +95,7 @@ export const useWallet = (user) => {
     amount, 
     setAmount, 
     loading: mutation.isPending, 
-    initializing: initializing || isQueryLoading, // Expose initialization state
+    initializing: initializing || isQueryLoading, 
     performTransaction 
   };
 };

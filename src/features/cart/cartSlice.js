@@ -6,11 +6,11 @@ const initialState = {
   totalAmount: 0,
 };
 
-// Helper to recalculate totals
+
 const calculateTotals = (state) => {
   state.totalQuantity = state.items.reduce((total, item) => total + item.quantity, 0);
   state.totalAmount = state.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-  // Fix to 2 decimal places to avoid floating point errors (e.g., 10.999999)
+  
   state.totalAmount = parseFloat(state.totalAmount.toFixed(2));
 };
 

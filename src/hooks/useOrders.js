@@ -14,7 +14,7 @@ const fetchOrdersFn = async (userId) => {
     return {
       id: doc.id,
       ...data,
-      // Handle Firebase Timestamp conversion safely
+      
       createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : new Date(data.createdAt || Date.now()) 
     };
   });

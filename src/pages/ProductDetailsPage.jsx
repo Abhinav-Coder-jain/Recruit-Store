@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProductById } from '../utils/productData'; 
 import { Loader2, ArrowLeft } from 'lucide-react';
 
-// Import our 3 new modular components
+// Import our 3  modular components
 import ProductImageSection from '../features/products/components/details/ProductImageSection';
 import ProductInfoSection from '../features/products/components/details/ProductInfoSection';
 import ProductReviewSection from '../features/products/components/details/ProductReviewSection';

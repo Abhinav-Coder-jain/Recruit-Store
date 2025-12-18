@@ -1,7 +1,5 @@
 import productData from '../assets/Product_Data_Final.json';
 
-// Simulate an API call behavior (Async/Await ready)
-// We return Promises to maintain professional architecture compatible with Loaders/React Query.
 
 
 
@@ -28,10 +26,9 @@ const CATEGORY_MAPPING = {
   20: "Footwear"
 };
 
-// ... existing getProduct functions ...
 
 
-// 3. Helper to get ID from Name (if needed for filtering later)
+
 export const getCategoryIdByName = (name) => {
   return Object.keys(CATEGORY_MAPPING).find(key => CATEGORY_MAPPING[key] === name);
 };
@@ -48,7 +45,7 @@ export const getProductById = async (id) => {
 };
 
 export const getProductsByCategory = async (categoryName) => {
-  // Case-insensitive comparison for robustness
+  
   return productData.filter(
     (item) => item.category.toLowerCase() === categoryName.toLowerCase()
   );
@@ -69,7 +66,7 @@ export const getAllCategories =async () => {
   return ["All", ...Object.values(CATEGORY_MAPPING)];
 };
 
-// Helper for pagination (standard practice for frontend filtering)
+
 export const getPaginatedProducts = async (products, page = 1, limit = 10) => {
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
@@ -89,7 +86,7 @@ export const getFilteredProducts = async ({
 }) => {
   let results = productData;
 
-  // Search Logic
+  
   if (search) {
     const lowerQuery = search.toLowerCase().replace(/\s+/g, "");
     results = results.filter((item) => 
@@ -99,17 +96,16 @@ export const getFilteredProducts = async ({
     );
   }
 
-  // Category Logic
+  
   if (category !== "All") {
     results = results.filter((item) => item.category === category);
   }
 
-  // Price & Rating
   results = results.filter((item) => item.price <= maxPrice);
   if (minRating > 0) {
     results = results.filter((item) => item.rating >= minRating);
   }
 
-  // REUSE THE HELPER (Standardizing response format)
+ 
   return getPaginatedProducts(results, page, 9);
 };
