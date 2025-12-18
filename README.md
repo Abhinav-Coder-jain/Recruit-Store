@@ -1,16 +1,41 @@
-# React + Vite
+# RecruitStore - Enterprise E-Commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+RecruitStore is a full-stack e-commerce application designed to mimic a real-world enterprise platform. It features a complete user journey including secure authentication, product discovery, a digital wallet system, shopping cart management, and responsive design.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[Link to your Vercel App will go here]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+- **Authentication & Security:** - Secure Login/Signup with Email & Password (Firebase Auth).
+  - Form validation using Zod & React Hook Form.
+  - Protected Routes ensuring secure session persistence.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Dynamic UI/UX:**
+  - **Dark/Light Theme System:** System-wide color inversion using Tailwind CSS.
+  - **Dynamic Pagination:** Custom hook that adjusts grid items based on screen width.
+  - **Glassmorphism Navbar:** Sticky navigation with backdrop blur.
+  - **Skeleton Loading:** Optimized data fetching feedback to reduce CLS.
 
-## Expanding the ESLint configuration
+- **Core E-Commerce Functionality:**
+  - **Digital Wallet:** Real-time Firestore integration for store credit transactions.
+  - **Shopping Cart:** Redux Toolkit implementation for global state management.
+  - **Subscription Model:** "VIP" status toggles global pricing logic.
+  - **Invoicing:** Custom print-ready invoice generation modal.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Advanced Data Handling:**
+  - **TanStack Query (React Query):** For efficient server-state caching and background updates.
+  - **Debounced Search:** URL-synchronized search filters for shareable links.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS
+- **State Management:** Redux Toolkit (Client), TanStack Query (Server)
+- **Backend:** Firebase (Auth, Firestore)
+- **UI Components:** Lucide React (Icons), React Hot Toast (Notifications)
+
+## ⚡ Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/your-username/recruit-store.git](https://github.com/your-username/recruit-store.git)
