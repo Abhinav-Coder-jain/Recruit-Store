@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  apiKey: "AIzaSyAwUhRV75uv6Ze_bWL1IwvUnWMC9qoiTlI",
+  authDomain:"recruit-crm-ecommerce.firebaseapp.com",
+  projectId: "recruit-crm-ecommerce",
+  storageBucket: "recruit-crm-ecommerce.firebasestorage.app",
+  messagingSenderId:"653213899716",
+  appId: "1:653213899716:web:355b19e0e5f41e746a2291"
 };
 
 // Initialize Firebase
