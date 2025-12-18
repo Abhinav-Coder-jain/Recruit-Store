@@ -3,7 +3,7 @@
 RecruitStore is a full-stack e-commerce application designed to mimic a real-world enterprise platform. It features a complete user journey including secure authentication, product discovery, a digital wallet system, shopping cart management, and responsive design.
 
 ## 🚀 Live Demo
-[Link to your Vercel App will go here]
+[[Live-store](https://recruit-store.vercel.app/)]
 
 ## ✨ Key Features
 
