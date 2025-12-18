@@ -33,9 +33,3 @@ RecruitStore is a full-stack e-commerce application designed to mimic a real-wor
 - **State Management:** Redux Toolkit (Client), TanStack Query (Server)
 - **Backend:** Firebase (Auth, Firestore)
 - **UI Components:** Lucide React (Icons), React Hot Toast (Notifications)
-
-## ⚡ Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone [https://github.com/your-username/recruit-store.git](https://github.com/your-username/recruit-store.git)
