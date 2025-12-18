@@ -7,10 +7,10 @@ import toast from "react-hot-toast";
 // Import Sub-Components
 
 import ProductActions from "./components/card/ProductAction";
-import ProductBadge from "./components/Card/ProductBadge";
+import ProductBadge from "./components/card/ProductBadge";
 import ProductImage from "./components/card/ProductImag";
-import ProductMeta from "./components/Card/ProductMeta";
-import ProductPricing from "./components/Card/ProductPricing";
+import ProductMeta from "./components/card/ProductMeta";
+import ProductPricing from "./components/card/ProductPricing";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
