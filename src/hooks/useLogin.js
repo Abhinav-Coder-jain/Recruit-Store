@@ -45,7 +45,7 @@ export const useLogin = () => {
         displayName: user.displayName
       }));
       toast.success("Welcome back!");
-      const destination = location.state?.from?.pathname || "/products";
+      const destination = location.state?.from?.pathname || "/";
       navigate(destination, { replace: true });
     },
     onError: (error) => {

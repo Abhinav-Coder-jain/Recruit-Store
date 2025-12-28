@@ -7,6 +7,9 @@ import { authSuccess, logoutUser } from './userSlice';
 import { setCart } from '../cart/cartSlice';
 import { Loader2 } from 'lucide-react';
 
+
+
+
 const AuthProvider = ({ children }) => {
   const dispatch = useDispatch();
   const [isInitializing, setIsInitializing] = useState(true);

@@ -2,6 +2,11 @@ import React from 'react';
 import { MapPin } from 'lucide-react';
 
 const ShippingForm = ({ formData, handleChange }) => {
+ 
+
+  const inputClass = "w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg outline-none transition-all bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500/50";
+
+
   return (
     <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
@@ -20,7 +25,7 @@ const ShippingForm = ({ formData, handleChange }) => {
             value={formData.fullName} 
             onChange={handleChange}
             placeholder="John Doe"
-            className="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg outline-none transition-all bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500/50"
+            className={inputClass}
           />
         </div>
         
@@ -34,7 +39,7 @@ const ShippingForm = ({ formData, handleChange }) => {
             value={formData.address} 
             onChange={handleChange}
             placeholder="123 Main St, Apt 4B"
-            className="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg outline-none transition-all bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500/50"
+            className={inputClass}
           />
         </div>
 
@@ -48,7 +53,7 @@ const ShippingForm = ({ formData, handleChange }) => {
             value={formData.city} 
             onChange={handleChange}
             placeholder="New York"
-            className="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg outline-none transition-all bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500/50"
+            className={inputClass}
           />
         </div>
 
@@ -62,7 +67,7 @@ const ShippingForm = ({ formData, handleChange }) => {
             value={formData.zipCode} 
             onChange={handleChange}
             placeholder="10001"
-            className="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg outline-none transition-all bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500/50"
+            className={inputClass}
           />
         </div>
       </div>

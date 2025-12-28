@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart, decreaseQuantity } from "../cart/cartSlice";
@@ -104,7 +103,7 @@ const ProductCard = ({ product }) => {
             user={user}
           />
           
-        </div>
+        </div>          
       </div>
     </div>
   );

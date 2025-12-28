@@ -21,4 +21,4 @@ const ProductImage = ({ image, title }) => {
   );
 };
 
-export default ProductImage;
+export default ProductImage;     

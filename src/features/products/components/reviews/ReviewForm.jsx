@@ -53,7 +53,9 @@ const ReviewForm = ({ onSubmit, isSubmitting }) => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="What did you like or dislike?"
-          className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none text-slate-900 dark:text-white placeholder-slate-400"
+          maxLength={300}
+          className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2
+           focus:ring-blue-500 outline-none text-slate-900 dark:text-white placeholder-slate-400"
           required
         ></textarea>
 

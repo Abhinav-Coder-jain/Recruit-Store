@@ -89,6 +89,17 @@ const cartSlice = createSlice({
       calculateTotals(state);
     },
 
+      increaseQuantity: (state, action) => {
+      const id = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
+      
+      if (existingItem) {
+        existingItem.quantity++;
+      }
+      calculateTotals(state);
+    },
+      
+
     // Action: Set Cart (Used when loading from Firebase)
     setCart: (state, action) => {
       console.log('Cart Slice: Loading cart from database:', action.payload);
@@ -98,5 +109,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart, setCart, decreaseQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart, setCart, decreaseQuantity , increaseQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
